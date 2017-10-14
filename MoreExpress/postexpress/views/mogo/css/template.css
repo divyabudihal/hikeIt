@@ -512,30 +512,86 @@ section {
 	width: 170px;
 }
 /* =============== SECTION WHAT WE DO =============== */
-#nino-whatWeDo .panel-group {
+#nino-whatWeDo1 .panel-group {
 	margin: 0;
 }
-#nino-whatWeDo .panel-group .panel+.panel {
+#nino-whatWeDo1 .panel-group .panel+.panel {
     margin-top: 8px;
 }
-#nino-whatWeDo .panel-default {
+#nino-whatWeDo1 .panel-default {
 	border-color: #e5e5e5;
 	border-radius: 0;
 }
-#nino-whatWeDo .panel-default > .panel-heading {
+#nino-whatWeDo1 .panel-default > .panel-heading {
 	background: #fff;
 	padding: 0;
 }
-#nino-whatWeDo .panel-title {
+#nino-whatWeDo1 .panel-title {
 	font-size: 14px;
 }
-#nino-whatWeDo .panel-title a {
+#nino-whatWeDo1 .panel-title a {
 	display: block;
 	padding: 20px 15px 20px 50px;
 	position: relative;
 	text-decoration: none;
 }
-#nino-whatWeDo .panel-title .nino-icon {
+#nino-whatWeDo1 .panel-title .nino-icon {
+	position: absolute;
+	left: 10px;
+	top: 13px;
+	font-size: 30px;
+	color: #95e1d3;
+}
+#nino-whatWeDo1 .panel-title .nino-icon.arrow {
+	left: auto;
+	right: 10px;
+	color: #ccc;
+}
+#nino-whatWeDo1 .panel-title .collapsed .nino-icon.arrow {
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+		 -o-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+			transform: rotate(180deg);
+}
+#nino-whatWeDo1 .panel-body {
+	font-style: italic;
+	height: 185px;
+	font-weight: 300;
+}
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+	background: #95e1d3;
+}
+#nino-whatWeDo1 .mCSB_scrollTools .mCSB_draggerRail {
+	background: #f5f5f5;
+}
+/*1*/
+#nino-whatWeDo1 .panel-group {
+	margin: 0;
+}
+#nino-whatWeDo1 .panel-group .panel+.panel {
+    margin-top: 8px;
+}
+#nino-whatWeDo1 .panel-default {
+	border-color: #e5e5e5;
+	border-radius: 0;
+}
+#nino-whatWeDo1 .panel-default > .panel-heading {
+	background: #fff;
+	padding: 0;
+}
+#nino-whatWeDo1 .panel-title {
+	font-size: 14px;
+}
+#nino-whatWeDo1 .panel-title a {
+	display: block;
+	padding: 20px 15px 20px 50px;
+	position: relative;
+	text-decoration: none;
+}
+#nino-whatWeDo1 .panel-title .nino-icon {
 	position: absolute;
 	left: 10px;
 	top: 13px;
