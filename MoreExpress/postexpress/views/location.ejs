@@ -1,7 +1,34 @@
 <h1>Let's go hiking!</h1>
 
+<p>Car Distance</p>
+<% trip.carDistance.forEach(function(x){ %>
+    <li> <%=x %></li> 
+<%    });   %>
+
+<p>Car Time</p>
+<% trip.carTime.forEach(function(y){ %>
+    <li> <%=y %></li> 
+<%    });   %>
+
+<p>Transit Distance</p>
+<% trip.transitDistance.forEach(function(z){ %>
+    <li> <%=z %></li> 
+<%    });   %>
+
+<p>Transit Time</p>
+<% trip.transitTime.forEach(function(a){ %>
+    <li> <%=a %></li> 
+<%    });   %>
+
+
+
+<!--<li><%=trip.carDistance[0]%></li>-->
+
+
 
 <form action="/addstartLocation" method="POST">
     <input type = "text" name = "newstartLocation" placeholder = "Start Location">
+    
     <button></button>
 </form>
+

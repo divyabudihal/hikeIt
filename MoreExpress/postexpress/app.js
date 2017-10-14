@@ -28,6 +28,12 @@ var hikeAddress = ['5495 Chancellor Blvd, Vancouver, BC V6T 1E4',
 //                         'lat': 23,
 //                         'lng': 25
 //                       }] ;
+
+var carDistance = [];
+var carTime = [];
+
+var transitDistance = [];
+var transitTime = [];
                 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
@@ -52,8 +58,7 @@ app.get("/location",function(req,res){
         
     // })
     distance.mode('driving');
-    var carDistance = [];
-    var carTime = [];
+    
     
     distance.matrix(startLocation, hikeAddress, function (err, distances) {
     if (err) {
@@ -80,8 +85,7 @@ app.get("/location",function(req,res){
     });
     
     distance.mode('transit');
-    var transitDistance = [];
-    var transitTime = [];
+   
     
     distance.matrix(startLocation, hikeAddress, function (err, distances) {
     if (err) {
@@ -107,9 +111,24 @@ app.get("/location",function(req,res){
     }
     });
     
-    res.render("location",{location: startLocation});
+    // res.render("location",{ carDistance: carDistance});
+    // res.render("location",{ carTime: carTime});
+    // res.render("location",{ transitDistance: transitDistance});
+    // res.render("location",{ transitTime: transitTime});
+    
+    // res.render("location", { carDistance: carDistance },
+    //                         { carTime: carTime},
+    //                         { transitDistance: transitDistance},
+    //                         { transitDistance: transitDistance} );
+    res.render("location", {trip: {carDistance: carDistance,
+                                    carTime: carTime,
+                                    transitDistance: transitDistance,
+                                    transitTime: transitTime}});
+
+    
     
 });
+
 app.listen(process.env.PORT, process.env.IP,function(){
     console.log("Server started!!");
 });
