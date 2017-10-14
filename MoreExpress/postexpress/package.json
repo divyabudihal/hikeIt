@@ -12,6 +12,12 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2"
   },
+  "name": "google-distance-matrix",
+  "description": "Google Maps API",
+  "main": "index.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {},
   "description": ""
 }
