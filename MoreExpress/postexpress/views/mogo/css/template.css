@@ -598,29 +598,29 @@ section {
 	font-size: 30px;
 	color: #95e1d3;
 }
-#nino-whatWeDo .panel-title .nino-icon.arrow {
+#nino-whatWeDo1 .panel-title .nino-icon.arrow {
 	left: auto;
 	right: 10px;
 	color: #ccc;
 }
-#nino-whatWeDo .panel-title .collapsed .nino-icon.arrow {
+#nino-whatWeDo1 .panel-title .collapsed .nino-icon.arrow {
 	-webkit-transform: rotate(180deg);
 	   -moz-transform: rotate(180deg);
 		 -o-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);
 			transform: rotate(180deg);
 }
-#nino-whatWeDo .panel-body {
+#nino-whatWeDo1 .panel-body {
 	font-style: italic;
 	height: 185px;
 	font-weight: 300;
 }
-#nino-whatWeDo .mCS-default .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-#nino-whatWeDo .mCS-default .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
-#nino-whatWeDo .mCS-default .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+#nino-whatWeDo1 .mCS-default .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
 	background: #95e1d3;
 }
-#nino-whatWeDo .mCSB_scrollTools .mCSB_draggerRail {
+#nino-whatWeDo1 .mCSB_scrollTools .mCSB_draggerRail {
 	background: #f5f5f5;
 }
 /* =============== SECTION TESTIMONIAL =============== */
@@ -1085,6 +1085,9 @@ div.pp_default .pp_social {
 	#nino-whatWeDo .panel-body {
 		height: 118px;
 	}
+	#nino-whatWeDo1 .panel-body {
+		height: 118px;
+	}
 	/* =============== FOOTER =============== */
 	footer .nino-followUs {
 		margin: 15px 0;
@@ -1135,6 +1138,9 @@ div.pp_default .pp_social {
 	}	
 	/* =============== SECTION WHAT WE DO =============== */
 	#nino-whatWeDo .panel-group {
+		margin-top: 20px;
+	}
+	#nino-whatWeDo1 .panel-group {
 		margin-top: 20px;
 	}
 	/* =============== SECTION OUR TEAM =============== */
