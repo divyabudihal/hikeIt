@@ -51,8 +51,9 @@ app.get("/location",function(req,res){
     //     'destinations': testDestination,
         
     // })
-    var travelDistance = [];
-    var travelTime = [];
+    distance.mode('driving');
+    var carDistance = [];
+    var carTime = [];
     
     distance.matrix(startLocation, hikeAddress, function (err, distances) {
     if (err) {
@@ -62,22 +63,50 @@ app.get("/location",function(req,res){
         return console.log('No distances');
     }
     if (distances.status == 'OK') {
-        console.log(distances);
         for (var i=0; i < startLocation.length; i++) {
             for (var j = 0; j < hikeAddress.length; j++) {
                 var origin = distances.origin_addresses[i];
                 var destination = hikeName[j];
                 if (distances.rows[0].elements[j].status == 'OK') {
-                    travelDistance[j] = distances.rows[i].elements[j].distance.text;
-                    travelTime[j] = distances.rows[i].elements[j].duration.text;
-                    console.log('Distance from ' + origin + ' to ' + destination + ' is ' + travelDistance[j] + ' and it will take ' + travelTime[j]);
+                    carDistance[j] = distances.rows[i].elements[j].distance.text;
+                    carTime[j] = distances.rows[i].elements[j].duration.text;
+                    console.log('Distance from ' + origin + ' to ' + destination + ' is ' + carDistance[j] + ' and it will take ' + carTime[j]);
                 } else {
                     console.log(destination + ' is not reachable by land from ' + origin);
                 }
             }
         }
     }
-});
+    });
+    
+    distance.mode('transit');
+    var transitDistance = [];
+    var transitTime = [];
+    
+    distance.matrix(startLocation, hikeAddress, function (err, distances) {
+    if (err) {
+        return console.log(err);
+    }
+    if(!distances) {
+        return console.log('No distances');
+    }
+    if (distances.status == 'OK') {
+        for (var i=0; i < startLocation.length; i++) {
+            for (var j = 0; j < hikeAddress.length; j++) {
+                var origin = distances.origin_addresses[i];
+                var destination = hikeName[j];
+                if (distances.rows[0].elements[j].status == 'OK') {
+                    transitDistance[j] = distances.rows[i].elements[j].distance.text;
+                    transitTime[j] = distances.rows[i].elements[j].duration.text;
+                    console.log('Distance from ' + origin + ' to ' + destination + ' is ' + transitDistance[j] + ' and it will take ' + transitTime[j] + ' by transit. ');
+                } else {
+                    console.log(destination + ' is not reachable by land from ' + origin);
+                }
+            }
+        }
+    }
+    });
+    
     res.render("location",{location: startLocation});
     
 });
