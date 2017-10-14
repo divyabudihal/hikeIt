@@ -51,6 +51,9 @@ app.get("/location",function(req,res){
     //     'destinations': testDestination,
         
     // })
+    var travelDistance = [];
+    var travelTime = [];
+    
     distance.matrix(startLocation, hikeAddress, function (err, distances) {
     if (err) {
         return console.log(err);
@@ -65,8 +68,9 @@ app.get("/location",function(req,res){
                 var origin = distances.origin_addresses[i];
                 var destination = hikeName[j];
                 if (distances.rows[0].elements[j].status == 'OK') {
-                    var distance = distances.rows[i].elements[j].distance.text;
-                    console.log('Distance from ' + origin + ' to ' + destination + ' is ' + distance);
+                    travelDistance[j] = distances.rows[i].elements[j].distance.text;
+                    travelTime[j] = distances.rows[i].elements[j].duration.text;
+                    console.log('Distance from ' + origin + ' to ' + destination + ' is ' + travelDistance[j] + ' and it will take ' + travelTime[j]);
                 } else {
                     console.log(destination + ' is not reachable by land from ' + origin);
                 }
